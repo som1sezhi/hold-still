@@ -8,12 +8,14 @@ function setupAccel() {
 	}
 
 	accel.addEventListener('reading', updateDisplay);
+accel.start();
+
 }
 
 let text = document.getElementById('status');
 navigator.permissions.query({name: 'accelerometer'}).then(function(result) {
 	if (result.state === 'granted') {
-		text.innerHTML = 'nice';
+		text.innerHTML = 'nice2';
 		setupAccel();
 	} else if (result.state === 'prompt') {
 		text.innerHTML = 'prompt';
